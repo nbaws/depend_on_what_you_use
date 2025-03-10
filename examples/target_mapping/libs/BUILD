@@ -9,10 +9,15 @@ cc_library(
     name = "b",
     hdrs = ["b.h"],
     visibility = ["//target_mapping/mapping:__pkg__"],
-    deps = [":c"],
+    deps = [":c", ":d"],
 )
 
 cc_library(
     name = "c",
     hdrs = ["c.h"],
+)
+
+sh_library(
+    name = "d",
+    srcs = ["foo.sh"],
 )
